@@ -22,4 +22,4 @@ app.use(
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, console.log(`App running at PROT: ${PORT}`));
+app.listen(PORT, console.log(`App running at PORT: ${PORT}`));
