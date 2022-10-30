@@ -16,13 +16,6 @@ connectDB();
 // Accept Preflight Requests
 app.use(cors());
 
-// Serve static Files
-app.use(express.static(path.join(__dirname, "client/build")));
-
-app.get("*", function (req, res, next) {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
-
 // Serve GraphiQL
 app.use(
   "/graphql",
@@ -31,6 +24,13 @@ app.use(
     graphiql: process.env.NODE_ENV === "development",
   })
 );
+
+// Serve static Files
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("*", function (req, res, next) {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 const PORT = process.env.PORT || 8080;
 
