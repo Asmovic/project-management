@@ -10,9 +10,19 @@ const schema = require("./schema/schema");
 const app = express();
 
 // Connect to Database
-
 connectDB();
+
+// Accept Preflight Requests
 app.use(cors());
+
+// Serve static Files
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("*", function (req, res, next) {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
+// Serve GraphiQL
 app.use(
   "/graphql",
   graphqlHTTP({
