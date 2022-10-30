@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A project management application with Express and GraphQL server and frontend built with React and Apollo-client.",
   "main": "index.js",
+  "engines": {
+    "node": "16.14.0"
+  },
   "scripts": {
     "start": "node server/index.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
