@@ -11,8 +11,7 @@
     "server": "nodemon index.js",
     "build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "node index.js"
   },
   "author": "Asmovic",
   "license": "ISC",
@@ -25,6 +24,7 @@
     "mongoose": "^6.7.0"
   },
   "devDependencies": {
+    "concurrently": "^7.5.0",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20"
   }

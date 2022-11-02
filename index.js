@@ -28,10 +28,10 @@ app.use(
 );
 
 // Serve static Files
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("*", function (req, res, next) {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 const PORT = process.env.PORT || 8080;
