@@ -1,7 +1,7 @@
-const path = require("path");
 const express = require("express");
 const Colors = require("colors");
 const cors = require("cors");
+const path = require("path");
 const { graphqlHTTP } = require("express-graphql");
 const dotEnv = require("dotenv");
 
@@ -11,12 +11,11 @@ const connectDB = require("./config/db");
 const schema = require("./schema/schema");
 
 const app = express();
+// Accept Preflight Requests
+app.use(cors());
 
 // Connect to Database
 connectDB();
-
-// Accept Preflight Requests
-app.use(cors());
 
 // Serve GraphiQL
 app.use(
@@ -34,6 +33,6 @@ app.get("*", function (req, res, next) {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`App running at PORT: ${PORT}`));
