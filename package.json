@@ -4,7 +4,8 @@
   "description": "A project management application with Express and GraphQL server and frontend built with React and Apollo-client.",
   "main": "index.js",
   "engines": {
-    "node": "16.14.0"
+    "node": "16.14.0",
+    "npm": "8.3.1"
   },
   "scripts": {
     "client": "cd client && yarn start",
@@ -25,6 +26,7 @@
     "mongoose": "^6.7.0"
   },
   "devDependencies": {
+    "concurrently": "^7.5.0",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20"
   }
