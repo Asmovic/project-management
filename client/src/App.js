@@ -26,7 +26,7 @@ const cache = new InMemoryCache({
 });
 
 const client = new ApolloClient({
-  uri: "/graphql",
+  uri: "https://asmovic-project-management.onrender.com/graphql",
   cache,
 });
 

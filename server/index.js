@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("*", function (req, res, next) {
   res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.send("<h1>Listening</h1>");
 });
 
 const PORT = process.env.PORT || 5000;
