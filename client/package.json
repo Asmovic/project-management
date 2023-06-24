@@ -30,7 +30,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "yarn run clean && react-scripts build && mv build ../public",
+    "build": "react-scripts build",
+    "buildd": "yarn run clean && react-scripts build && mv build ../public",
     "clean": "rm -rf ../public",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
