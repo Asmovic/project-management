@@ -8,11 +8,12 @@
     "npm": "8.3.1"
   },
   "scripts": {
-    "client": "cd client && yarn start",
+    "client": "cd server && yarn start",
     "server": "nodemon index.js",
-    "prod": "cd client && npm run build",
+    "prod": "cd server && npm run build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node index.js",
+    "build": "cd server && yarn install",
+    "start": "cd server && node index.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "Asmovic",
